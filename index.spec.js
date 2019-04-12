@@ -58,13 +58,16 @@ describe("GET /game", () => {
         expect(response.type).toEqual('application/json');
     })
 
-    it("Is the data body in the request correct?", (done) => {
+    it("Can we get the list of all games?", (done) => {
         request(server).get("/games").expect(200, done);
         
     })
 
     // custom unique tests for the system, specifically for this method
 
-
+    it("Is the data body in the request for the game ID correct?", (done) => {
+        request(server).get("/games/1").expect(200, done);
+        
+    })
 
 })
