@@ -33,7 +33,9 @@ Describe() references a global set or cluster of behaviours to test. It() refere
 Test driven development helps test for given rendering or event based behaviour, in advance, by writing the least amount of code, and allowing for quick refactoring early in the development process. 
 
 1. Mention three types of automated tests.
-Unit testing (i.e. testing for text), component testing (i.e. seeing if a component rendered?), and snapshot testing (tracking overall large scale behaviour rendering)
+Unit testing (i.e. testing for text), component testing (i.e. seeing if a component rendered?), and snapshot testing (tracking overall large scale behaviour rendering). 
+
+For our server testing, we are doing integration testing, which tests the operations of the overall CRUD system as a whole, rather than do unit testing of a limited scope of a project. 
 
 ## Project Set Up
 
