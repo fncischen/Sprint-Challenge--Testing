@@ -41,11 +41,8 @@ describe("POST /game", () => {
     // https://jestjs.io/docs/en/expect#tomatchregexporstring
     it("existing title of a game exists", () => {
 
-        var game = {title: 'Donkey Kong', genre: "Console", releaseYear: 1992};
-        const response = request(server).get('/games');
-        
-        // console.log(response);
-        expect(response.data).toContain(game).toHaveProperty("title", game.title);
+        var game = {id: 4, title: 'Donkey Kong', genre: "Console", releaseYear: 1992};
+        const response = request(server).get('/games').send(game).expect(405);
     
     })
 
@@ -78,9 +75,11 @@ describe("GET /game", () => {
 
     // checking for incorrect id? 
     it("Is the data body in the request for the game ID correct?", (done) => {
-        request(server).get("/games/1").expect(404, done).end(err => { if (err) return done(err);
-        done();
-    })
+        request(server).get('/games/0').expect(200, done)
+    //     .end(err => { if (err) return done(err).
+    //     done();
+
+    // })
 
     })
 

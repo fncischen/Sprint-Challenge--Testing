@@ -31,7 +31,12 @@ let db = [
         title: 'Doom', 
         genre: 'PC', 
         releaseYear: 1995
-    }
+    },
+
+    {id: 4,
+    title: 'Donkey Kong', 
+    genre: "Console", 
+    releaseYear: 1992}
 ]
 
 server.get("/games", (req,res) => {
@@ -63,15 +68,14 @@ server.post("/games", (req,res) => {
         }
 })
 
-server.get("/games/id", (req,res) => {
-
-    let selectedGame = games.find(game => game.id == req.params.id).first();
+server.get("/games/:id", (req,res) => {
+    let selectedGame = db.find(game => game.id == req.params.id);
 
     if(selectedGame){
         res.status(200).json(selectedGame);
     }
     else{
-        res.status(422).json({errorMessage: "We cannot find the game you're looking for"})
+        res.status(404).json({errorMessage: "We cannot find the game you're looking for"})
     }
 
     // axios.get(db)
@@ -80,4 +84,7 @@ server.get("/games/id", (req,res) => {
 
 })
 
+// server.listen(5000, () => {
+//     console.log("Loading server localhost:5000")
+// })
 module.exports = server;
