@@ -25,3 +25,4 @@ server.post("/games", (req,res) => {
         }
 })
 
+export default server;
