@@ -13,7 +13,7 @@ describe("POST /game", () => {
     })
 
     it("Is the data body in the request correct?", async () => {
-        const response = await request(server).get("/game")
+        const response = await request(server).post("/game")
     })
 
     // custom unique tests for the system, specifically for this method
