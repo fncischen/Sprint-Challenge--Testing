@@ -22,7 +22,7 @@ describe("POST /game", () => {
 })
 
 
-describe("GET /game", async () => {
+describe("GET /game", () => {
 
     // baseline tests
     it("Check for correct status code returned", async () => {
