@@ -1,7 +1,7 @@
 const express = require("express");
 const server = express();
 const axios = require("axios");
-
+var bodyParser = require('body-parser');
 // const db = require("./data/data.js");
 
 let db = [
@@ -38,6 +38,8 @@ let db = [
     genre: "Console", 
     releaseYear: 1992}
 ]
+
+server.use(express.json());
 
 server.get("/games", (req,res) => {
     // axios.get(db)

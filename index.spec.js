@@ -1,6 +1,6 @@
 const server = require("./index.js");
 
-var bodyParser = require('body-parser')
+
 const request = require('supertest'); 
 
 // check https://github.com/visionmedia/supertest for supertest methods
@@ -11,7 +11,7 @@ describe("POST /game", () => {
     it("Check for CORRECT status code returned", async () => {
         const response = await request(server).post('/games');
 
-        const correctStatusCode = 500;
+        const correctStatusCode = 422;
         // because we havent posted anything
 
         expect(response.status).toEqual(correctStatusCode);
@@ -76,7 +76,7 @@ describe("GET /game", () => {
     // checking for incorrect id? 
     it("Is the data body in the request for the game ID correct?", (done) => {
         request(server).get('/games/5').expect(404, done)
-        // .expect("We cannot find the game you're looking for")
+        .expect({errorMessage: "We cannot find the game you're looking for"})
         // .end((err) => { 
         //     if (err) return done(err);
         //      done();
