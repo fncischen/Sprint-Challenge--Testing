@@ -50,7 +50,7 @@ server.post("/games", (req,res) => {
     else{
         let selectedGame = games.find(game => game.title == req.body.title).first();
         if(selectedGame) {
-            res.status(422).json({errorMessage: "There is an existing title for this game."})
+            res.status(405).json({errorMessage: "There is an existing title for this game."})
         }
         else{
 
