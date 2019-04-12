@@ -1,7 +1,7 @@
 const server = require("./index.js");
 const request = require('supertest'); 
 
-describe("POST", () => {
+describe("POST", async () => {
     it(, () => {
 
     })
@@ -16,7 +16,7 @@ describe("POST", () => {
 })
 
 
-describe("GET", () => {
+describe("GET", async () => {
     it(, () => {
         
     })
