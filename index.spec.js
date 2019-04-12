@@ -75,11 +75,13 @@ describe("GET /game", () => {
 
     // checking for incorrect id? 
     it("Is the data body in the request for the game ID correct?", (done) => {
-        request(server).get('/games/0').expect(200, done)
-    //     .end(err => { if (err) return done(err).
-    //     done();
+        request(server).get('/games/5').expect(404, done)
+        // .expect("We cannot find the game you're looking for")
+        // .end((err) => { 
+        //     if (err) return done(err);
+        //      done();
 
-    // })
+        // });
 
     })
 
