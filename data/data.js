@@ -1,4 +1,4 @@
-export default const data = [
+let data = [
     {
     title: 'Pacman', // required
     genre: 'Arcade', // required
@@ -23,3 +23,4 @@ export default const data = [
         releaseYear: 1995
     }
 ]
+
