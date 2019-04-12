@@ -74,9 +74,12 @@ describe("GET /game", () => {
 
     // custom unique tests for the system, specifically for this method
 
+    // checking for incorrect id? 
     it("Is the data body in the request for the game ID correct?", (done) => {
-        request(server).get("/games/1").expect(200, done);
-        
+        request(server).get("/games/1").expect(404, done).end(err => { if (err) return done(err);
+        done();
+    })
+
     })
 
 })
