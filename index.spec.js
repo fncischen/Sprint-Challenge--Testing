@@ -1,31 +1,44 @@
 const server = require("./index.js");
 const request = require('supertest'); 
 
-describe("POST", async () => {
-    it(, () => {
+describe("POST /game", async () => {
 
-    })
-
-    it(, () => {
+    // baseline tests
+    it("Check for correct status code returned", () => {
         
     })
 
-    it(, () => {
+    it("Is the data in the right format?", () => {
         
     })
+
+    it("Is the data body in the request correct?", () => {
+        
+    })
+
+    // custom unique tests for the system, specifically for this method
+
+
 })
 
 
-describe("GET", async () => {
-    it(, () => {
+describe("GET /game", async () => {
+
+    // baseline tests
+    it("Check for correct status code returned", () => {
         
     })
 
-    it(, () => {
+    it("Is the data in the right format?", () => {
         
     })
 
-    it(, () => {
+    it("Is the data body in the request correct?", () => {
         
     })
+
+    // custom unique tests for the system, specifically for this method
+
+
+
 })
