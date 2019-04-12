@@ -39,11 +39,13 @@ describe("POST /game", () => {
 
     // search for custom match methods
     // https://jestjs.io/docs/en/expect#tomatchregexporstring
-    it("existing title of a game exists", async () => {
+    it("existing title of a game exists", () => {
 
         var game = {title: 'Donkey Kong', genre: "Console", releaseYear: 1992};
-
-        const response = await request(server).get('/games').expect(game).toMatch({})
+        const response = request(server).get('/games');
+        
+        // console.log(response);
+        expect(response.data).toContain(game).toHaveProperty("title", game.title);
     
     })
 
