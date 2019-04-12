@@ -37,6 +37,15 @@ describe("POST /game", () => {
 
     // custom unique tests for the system, specifically for this method
 
+    // search for custom match methods
+    // https://jestjs.io/docs/en/expect#tomatchregexporstring
+    it("existing title of a game exists", async () => {
+
+        var game = {title: 'Donkey Kong', genre: "Console", releaseYear: 1992};
+
+        const response = await request(server).get('/games').expect(game).toMatch({})
+    
+    })
 
 })
 
