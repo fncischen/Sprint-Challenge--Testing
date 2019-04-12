@@ -31,9 +31,10 @@ let db = [
 ]
 
 server.get("/games", (req,res) => {
-    axios.get(db)
-        .then(result => res.status(201).json(result))
-        .catch(err => res.status(500).json({errorMessage: "There was an error with posting data from the server"}));
+    // axios.get(db)
+    //     .then(result => res.status(201).json(result))
+    //     .catch(err => res.status(500).json({errorMessage: "There was an error with posting data from the server"}));
+    res.json(db);
 })
 
 server.post("/games", (req,res) => {
