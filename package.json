@@ -19,7 +19,10 @@
 	},
 	"homepage": "https://github.com/LambdaSchool/Sprint-Challenge--Testing#readme",
 	"dependencies": {
-		"express": "^4.16.4"
+		"axios": "^0.18.0",
+		"body-parser": "^1.18.3",
+		"express": "^4.16.4",
+		"nodemon": "^1.18.11"
 	},
 	"devDependencies": {
 		"jest": "^23.6.0",
